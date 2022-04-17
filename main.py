@@ -63,7 +63,7 @@ def main() -> None:
     updater.start_webhook(
         listen='0.0.0.0',
         port=PORT,
-        url_pat=TOKEN,
+        url_path=TOKEN,
         webhook_url='https://tradlebot.herokuapp.com/' + TOKEN,
         force_event_loop=True,
     )
