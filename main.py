@@ -45,7 +45,7 @@ def main() -> None:
     dp = updater.dispatcher
 
     # on different commands - answer in Telegram
-    dp.add_handler(CommandHandler("start", play))
+    dp.add_handler(CommandHandler("play", play))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
