@@ -19,7 +19,7 @@ is_prod = os.environ.get('IS_PROD', None)
 if not is_prod:
     load_dotenv('.env')
 TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
-PORT =  int(os.environ.get('PORT', 8443))
+PORT =  int(os.environ.get('PORT', '8443'))
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
