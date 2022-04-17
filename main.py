@@ -65,7 +65,6 @@ def main() -> None:
         port=PORT,
         url_path=TOKEN,
         webhook_url='https://tradlebot.herokuapp.com/' + TOKEN,
-        force_event_loop=True,
     )
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
