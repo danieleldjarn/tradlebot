@@ -23,17 +23,12 @@ PORT =  int(os.environ.get('PORT', '8443'))
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
-def start(update: Updater, context: CallbackContext) -> None:
-    """Send a message when the command /start is issued."""
-    update.message.reply_text('Hi!')
+def play(update: Updater, context: CallbackContext) -> None:
+    update.message.reply_text("Don't forget to play Tradle today! https://oec.world/en/tradle/")
 
-def help(update: Updater, context: CallbackContext) -> None:
-    """Send a message when the command /help is issued."""
-    update.message.reply_text('Help!')
-
-def echo(update: Updater, context: CallbackContext) -> None:
-    """Echo the user message."""
-    update.message.reply_text(update.message.text)
+# def echo(update: Updater, context: CallbackContext) -> None:
+#     """Echo the user message."""
+#     update.message.reply_text(update.message.text)
 
 def error(update: Updater, context: CallbackContext) -> None:
     """Log Errors caused by Updates."""
@@ -50,8 +45,7 @@ def main() -> None:
     dp = updater.dispatcher
 
     # on different commands - answer in Telegram
-    dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("start", play))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
